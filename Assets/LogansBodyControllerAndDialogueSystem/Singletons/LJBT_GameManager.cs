@@ -23,6 +23,15 @@ public class LJBT_GameManager : MonoBehaviour
 
     [Tooltip("A reference to the player characters body. The NPCs in the scene use this to constantly stare at the player")]
     [SerializeField] Transform playerBody;
+
+    [Tooltip("The game object that allows the player to interact with objects. De-activate it when the player is holding an object")]
+    [SerializeField] GameObject InteractionCheck;
+    [Tooltip("When the player holds an object, set this to active and de-activate the interaction check until its dropped")]
+    [SerializeField] GameObject ObjectHolder;
+    bool PlayerHoldingAnObject;
+
+    public LayerMask MirrorPuzzleLightLayerMask;//light beams that shoot a raycast can pull from here to know what they should / shouldnt hit, dont hit the player!
+
     public Transform GetPlayerBody()
     {
         return playerBody;
@@ -53,4 +62,20 @@ public class LJBT_GameManager : MonoBehaviour
             Application.Quit();
     }
 
+
+    public Transform PlayerPickUpObject()
+    {
+        //deactivate the interaction check so the player cant pick up any more items 
+        //return the object holder transform, so the object can be come a child of it
+
+        InteractionCheck.SetActive(false);
+        ObjectHolder.SetActive(true);
+        return ObjectHolder.transform;
+    }
+    public void PlayerDropObject()
+    {
+        //re-activate interaction check. 
+        InteractionCheck.SetActive(true);
+        ObjectHolder.SetActive(false);
+    }
 }

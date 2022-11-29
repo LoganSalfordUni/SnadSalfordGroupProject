@@ -37,7 +37,7 @@ public class LJBT_PlayerInteractionDetector : MonoBehaviour
             //IInteractables interact = collision.GetComponent(typeof(IInteractables));
             if (collision.gameObject.GetComponent<IInteractables>() != null)
             {
-                Debug.Log("Player is colliding with an interactable object");
+                //Debug.Log("Player is colliding with an interactable object");
                 lastInteractable = collision.GetComponent<IInteractables>();
                 LJBT_GameManager.instance.DisplayInteractionPromptText(lastInteractable.PromptText());
             }
