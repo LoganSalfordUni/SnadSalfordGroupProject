@@ -1,0 +1,81 @@
+$SandyFirstMeet
+!Sandy
+"Yaay, welcome to the Underworld stranger! Congratulations, your the 1000th person to make it here by falling through that hole in the roof"
+"Ofcourse, such a prestigious number requires a prize! Free beer I say. Wait... how old are you? Do you have ID?"
+"..."
+"Oh no, are you mute... or do you just not understand me? Nod your head if you understand me."
+?SandyIUnderstandSpeech,SandyIDontUnderstandSpeech
+
+$SandyIUnderstandSpeech
+"Okay, thats great!"
+"Since I don't know your age, you can have some juice. It comes in a bottle though, so it'll need popping open."
+"Could you head to the store room and get the bottle opener for me I-I mean us!?"
+?SandyIllGetTheOpener,SandyIWontGetTheOpener
+
+$SandyIDontUnderstandSpeech
+"Your sarcasm is duly noted"
+"Since I don't know your age, you can have some juice. It comes in a bottle though, so it'll need popping open."
+"Could you head to the store room and get the bottle opener for me? i mean us?"
+?SandyIllGetTheOpener,SandyIWontGetTheOpener
+
+$SandyIllGetTheOpener
+"See ya soon kid"
+;
+
+$SandyIWontGetTheOpener
+"You're the 309th person down here to refuse to get me a bottle opener. Well guess what kid, you can't make any progress in the story until you do"
+"So hop to it, smarty pants..."
+;
+
+$SandyCheckOpener
+"if youre reading this, "
+%CheckProgress,canopener,SandyGiveOpener,SandyDontHaveOpener
+
+$SandyGiveOpener
+!Sandy
+"Ah, the bottle opener. Thanks kid. One cactus beer for me, and one Cactus Juice from the kind people at Naomis Juice Bar for you"
+!Narrator
+"Sandy looks deep into the camera, and gives a warm smile as they hold up the juice."
+"You recieved one Cactus Juice from Naomis Juice Bar"
+%AddToInventory,Cactus Juice
+!Sandy
+"Say, you're pretty helpful so ill give you a word of advice. folks who arrive here always wanna know how to get out. The only way is to have favour with the GATEKEEPER"
+"They say the GATEKEEPER only lets souls with pure hearts free. If you help the people in the tomb with odd jobs, I'm sure thatd go a long way in proving you worthy"
+"Good luck kid"
+;
+
+$SandyDontHaveOpener
+!Sandy
+"The bottle opener should be in the storage cuboard just outside this room."
+;
+
+$BudtonFirstMeet
+!Budton
+"O-oh boy oh boy... Wh-what am I g-going to do?! Its all o-over! M-my life, my friendships, the world probably. Im the worst... :<"
+"W-WAGHH! How l-long have you been standing there not saying anything?! Sorry. I shouldn't blame you, if you choose to have a public freak out people are bound to stare at you"
+"I finally picked up the confidence to join the juice tasting club, but on my first day. I FORGOT TO BRING ANY JUICE"
+"I can't go to them like this"
+%AddToInventory,met budton
+%checkprogress,cactus juice,budtonihavejuice,BudtonNoJuiceFreakOut
+
+$BudtonIHaveJuice
+!Budton
+"Is...is that cactus juice? its not for me is it...?"
+?BudtonGiveJuice,BudtonNoJuiceFreakOut
+
+$BudtonNoJuiceFreakOut
+!Budton
+"Oh boy. Without juice, I cant hang out with the juice tasting club. Ill probably never have any friends. im probably going to die alone. The juice i left at home is gonna get warm"
+"then that juice is going to attract sand bears, and they'll invade my home. and then they'll start getting more confident and invading other peoples homes. Then we'll have a bear revolution"
+;
+
+$BudtonAfterFirstMeetNoJuice
+!Budton
+"...then the bears will figure out the monty hall problem"
+"...from there its only a matter of time until we have a jurassic park situation"
+"...and I'll never get detention and have a breakfast club style bonding session"
+;
+
+$BudtonGiveJuice
+"Oh thank you so much. You have no idea how much this means to me."
+;
