@@ -11057,7 +11057,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCamera: {fileID: 638164273}
   dialogueSpeechPanel: {fileID: 1227990514}
-  textFile: {fileID: 4900000, guid: 150144d09933a1647a8ed7d75984eb59, type: 3}
+  textFile: {fileID: 4900000, guid: 8c998354b4f15ad40b6365329f3b62f5, type: 3}
 --- !u!114 &1976313223
 MonoBehaviour:
   m_ObjectHideFlags: 0

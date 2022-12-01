@@ -1,0 +1,125 @@
+$SandyFirstMeet
+!Sandy
+"Yaay, welcome to the Underworld stranger! Congratulations, your the 1000th person to make it here by falling through that hole in the roof"
+"Ofcourse, such a prestigious number requires a prize! Free beer I say! Wait... how old are you? Do you have ID?"
+"..."
+"Oh no, are you mute... or do you just not understand me? Nod your head if you understand me."
+?SandyIUnderstandSpeech,SandyIDontUnderstandSpeech
+
+$SandyIUnderstandSpeech
+"Okay, thats great!"
+"Since I don't know your age, you can have some juice. It comes in a bottle though, so it'll need popping open."
+"Could you head to the store room and get the bottle opener for me I-I mean us!?"
+?SandyIllGetTheOpener,SandyIWontGetTheOpener
+
+$SandyIDontUnderstandSpeech
+"Your sarcasm is duly noted"
+"Since I don't know your age, you can have some juice. It comes in a bottle though, so it'll need popping open."
+"Could you head to the storage room and get the bottle opener for me I-I mean us!?"
+?SandyIllGetTheOpener,SandyIWontGetTheOpener
+
+$SandyIllGetTheOpener
+"Thanks! See ya soon kid."
+;
+
+$SandyIWontGetTheOpener
+"You're the 309th person down here to refuse to get me a bottle opener. Well guess what kid, you can't make any progress in the story until you do"
+"So hop to it, smarty pants..."
+;
+
+$SandyCheckOpener
+"The storage room is right next to this one, you can't miss it" "
+%CheckProgress,canopener,SandyGiveOpener,SandyDontHaveOpener
+
+$SandyGiveOpener
+!Sandy
+"Ah, the bottle opener. Thanks kid! One cactus beer for me, and one Cactus Juice from the kind people at Naomis Juice Bar™ for you"
+!Narrator
+"Sandy looks deep into the camera and gives a warm smile as they hold up the juice."
+"You received one Cactus Juice from Naomis Juice Bar™"
+%AddToInventory,Cactus Juice
+!Sandy
+"Say, you're pretty helpful so I'll give you a word of advice. Folks who arrive here always wanna know how to get out. The only way is to have favour with the GATEKEEPER"
+"They say the GATEKEEPER only lets souls with pure hearts free. If you help the people in the tomb with odd jobs, I'm sure that'd go a long way in proving that you are worthy"
+"Hey, before you go, lemme hit you with a quick personality test to see if you're even close to being worthy... Oh don't give me that! It's only 3 questions."
+"Since you're mute, you can answer by nodding for yes and shaking left and right for no (like a normal human being)"
+"Alrighty, question numero uno! Would you see yourself as a nice and caring person?"
+?SandyNice,SandyNotNice
+
+$SandyNice
+!Sandy
+"Ah! that's good, nice to hear."
+"Question two!"
+"Do you like animals?"
+
+$SandyNotNice
+!Sandy
+"Uhh... not a good start, but it's a start nonetheless."
+"Question two!"
+"Do you like animals?"
+?SandyLikeAnimals,SandyDontLikeAnimals
+
+$SandyLikeAnimals
+!Sandy
+"Ayy! I personally love dogs, but cats are also pretty cute and I just adore how they purr when they pet them, AND HAMSTERS! Aww don't get me started on those little cuties!..."
+!Narrator
+"3 hours pass as Sandy talks about her favourite animals (spoiler, it's all of them)"
+!Sandy
+"Sorry, I like to ramble when it comes to animals... Time for question number three!"
+"Are we friends?"
+?SandyIsFriend,SandyIsNotFriend
+
+$SandyDontLikeAnimals
+!Sandy
+"WHA-?! YOU DON-?! (breathe Sandy... breathe...) Ahem... okay... You gonna need some REAL luck with the GATEKEEPERS..."
+"Anyway... time for question 3!"
+"Are we friends?"
+?SandyIsFriend,SandyIsNotFriend
+
+$SandyIsFriend
+!Sandy
+"You're too trusting, that's not a good habit..."
+"Alright, I'd say you're worthy... but you shouldn't be so trusting."
+
+$SandyIsNotFriend
+!Sandy
+"Daww... why not?"
+"Alright, I'd say you're worthy... but you're mean."
+;
+
+$SandyDontHaveOpener
+!Sandy
+"The bottle opener should be in the storage cupboard just outside this room."
+;
+
+$ButtonFirstMeet
+!Button
+"O-oh boy, oh boy... Wh-what am I g-going to do?! Its all o-over! M-my life, my friendships, the world probably. I'm the worst... :<"
+"W-WAGHH! How l-long have you been standing there not saying anything?! Sorry... I-I shouldn't blame you, if you ch-choose to have a public freak out people are BOUND to stare at you"
+"I finally picked up the c-confidence to join the exclusive juice tasting club. but on my first day, I FORGOT MY JUICE AT HOME!!!"
+"I can't g-g-go to the club like this!"
+%AddToInventory,met button
+%checkprogress,cactus juice,buttonihavejuice,ButtonNoJuiceFreakOut
+
+$ButtonIHaveJuice
+!Button
+"I-is... is that cactus juice!? Is i-it for me?!"
+?ButtonGiveJuice,ButtonNoJuiceFreakOut
+
+$ButtonNoJuiceFreakOut
+!Button
+"Okay... but without juice, I cant hang out with the juice tasting club. Ill probably never have any friends. im probably going to die alone. The juice i left at home is gonna get warm"
+"then that juice is going to attract sand bears, and they'll invade my home. and then they'll start getting more confident and invading other peoples homes. Then we'll have a bear revolution"
+;
+
+$ButtonAfterFirstMeetNoJuice
+!Button
+"Then the bears will figure out the monty hall problem..."
+"... from there its only a matter of time until we have a jurassic park situation..."
+"... and I'll never get detention and have a breakfast club style bonding session..."
+;
+
+$ButtonGiveJuice
+!Button
+"Oh thank you so much. You have no idea how much this means to me."
+;
