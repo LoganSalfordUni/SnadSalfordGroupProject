@@ -29,7 +29,7 @@ public class LJBT_TextFileReader : MonoBehaviour
         currentLineNumber++;
 
         currentLine = fileLines[currentLineNumber].Trim();
-        Debug.Log(currentLine);
+        //Debug.Log(currentLine);
 
         //figure out what type of line it is 
         if (currentLine.StartsWith("$"))
@@ -64,6 +64,11 @@ public class LJBT_TextFileReader : MonoBehaviour
         {
             //use a line that starts with a semi colon to end the dialogue
             LJBT_DialogueManager.instance.EndDialogue();
+        }
+        else
+        {
+            Debug.Log("Error, Ive found a blank line or one I cant handle. It reads: " + currentLine);
+            HandleNextLine();
         }
 
     }

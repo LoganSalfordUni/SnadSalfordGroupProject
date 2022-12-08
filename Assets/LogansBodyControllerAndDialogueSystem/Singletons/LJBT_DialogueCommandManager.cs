@@ -14,6 +14,8 @@ public class LJBT_DialogueCommandManager : MonoBehaviour
         instance = this;
     }
 
+    [SerializeField] GameObject gameVictoryScreen;
+
     //when making a command start the line with a £
     //put any variables after a , mark
     //(using commas because theyre probably the most replaceable punctuation mark. item names wont be able to use commas now but thats fine, semi colons and full stops exist. something like a colon is harder to replace in item names though. if for some reason we wanted an item name with a colon in it. also commas are pretty decent at seperating parts of a bit of text so its functional too. the | could be good too but ive chosen a comma now.)
@@ -45,6 +47,10 @@ public class LJBT_DialogueCommandManager : MonoBehaviour
         else if (commandLine.Contains("%checkprogress") || commandLine.Contains("%checkinventory"))
         {
             CheckProgress(arguments);
+        }
+        else if (commandLine.Contains("%gatekeepergamecomplete"))
+        {
+            gameVictoryScreen.SetActive(true);
         }
     }
 

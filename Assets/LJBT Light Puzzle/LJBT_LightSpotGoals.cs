@@ -12,6 +12,10 @@ public class LJBT_LightSpotGoals : MonoBehaviour
     bool activatedBefore;
     private float activationTimer;
 
+
+    [SerializeField] bool playDialogueOnComplete;
+    [SerializeField] string dialogueSectionName;
+
     LJBT_LightPuzzle lightPuzzle;
     public void SetUpLightPuzzle(LJBT_LightPuzzle thing)
     {
@@ -47,6 +51,7 @@ public class LJBT_LightSpotGoals : MonoBehaviour
                 {
                     activatedBefore = true;
                     lightPuzzle.CompletePuzzle();
+                    //ShowDialogue()
                 }
             }
             else
@@ -56,4 +61,12 @@ public class LJBT_LightSpotGoals : MonoBehaviour
         }
 
     }
+
+    /*void ShowDialogue()
+    {
+        if (playDialogueOnComplete)
+        {
+            LJBT_DialogueManager.instance.
+        }
+    }*/
 }

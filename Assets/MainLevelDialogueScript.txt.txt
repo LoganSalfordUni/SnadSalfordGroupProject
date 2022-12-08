@@ -1,3 +1,5 @@
+//Sandy, Button, Elio (+ promoted Elio), Statue, Naomi, GATEKEEPER
+//SANDY
 $SandyFirstMeet
 !Sandy
 "Yaay, welcome to the Underworld stranger! Congratulations, your the 1000th person to make it here by falling through that hole in the roof"
@@ -15,7 +17,7 @@ $SandyIUnderstandSpeech
 $SandyIDontUnderstandSpeech
 "Your sarcasm is duly noted"
 "Since I don't know your age, you can have some juice. It comes in a bottle though, so it'll need popping open."
-"Could you head to the storage room and get the bottle opener for me I-I mean us!?"
+"Could you head to the storage room and get the bottle opener for me I-I mean us!?" (Nod or shake your head)
 ?SandyIllGetTheOpener,SandyIWontGetTheOpener
 
 $SandyIllGetTheOpener
@@ -29,15 +31,15 @@ $SandyIWontGetTheOpener
 
 $SandyCheckOpener
 "The storage room is right next to this one, you can't miss it" "
-%CheckProgress,canopener,SandyGiveOpener,SandyDontHaveOpener
+%CheckProgress,BottleOpener,SandyGiveOpener,SandyDontHaveOpener
 
 $SandyGiveOpener
 !Sandy
-"Ah, the bottle opener. Thanks kid! One cactus beer for me, and one Cactus Juice from the kind people at Naomis Juice Bar™ for you"
+"Ah, the bottle opener, Thanks kid! One Cactus Beer(tm) for me, and one Cactus Juice(tm), from the kind people at Naomis Juice Bar, for you"
 !Narrator
-"Sandy looks deep into the camera and gives a warm smile as they hold up the juice."
-"You received one Cactus Juice from Naomis Juice Bar™"
-%AddToInventory,Cactus Juice
+"Sandy looks deep into the camera and gives a warm smile as they hold up the juice, a twinkle shows off their perfectly white teeth."
+"You received one Cactus Juice(tm) from Naomis Juice Bar"
+%AddToInventory,Cactus Juice,friendssandy
 !Sandy
 "Say, you're pretty helpful so I'll give you a word of advice. Folks who arrive here always wanna know how to get out. The only way is to have favour with the GATEKEEPER"
 "They say the GATEKEEPER only lets souls with pure hearts free. If you help the people in the tomb with odd jobs, I'm sure that'd go a long way in proving that you are worthy"
@@ -63,7 +65,7 @@ $SandyLikeAnimals
 !Sandy
 "Ayy! I personally love dogs, but cats are also pretty cute and I just adore how they purr when they pet them, AND HAMSTERS! Aww don't get me started on those little cuties!..."
 !Narrator
-"3 hours pass as Sandy talks about her favourite animals (spoiler, it's all of them)"
+"3 hours pass as Sandy talks about her favourite animals (spoiler, it's all of them)."
 !Sandy
 "Sorry, I like to ramble when it comes to animals... Time for question number three!"
 "Are we friends?"
@@ -71,20 +73,19 @@ $SandyLikeAnimals
 
 $SandyDontLikeAnimals
 !Sandy
-"WHA-?! YOU DON-?! (breathe Sandy... breathe...) Ahem... okay... You gonna need some REAL luck with the GATEKEEPERS..."
+"WHA-?! YOU DON-?! (breathe Sandy... breathe...) Ahem... okay... You gonna need some REAL luck with the GATEKEEPER..."
 "Anyway... time for question 3!"
 "Are we friends?"
 ?SandyIsFriend,SandyIsNotFriend
 
 $SandyIsFriend
 !Sandy
-"You're too trusting, that's not a good habit..."
-"Alright, I'd say you're worthy... but you shouldn't be so trusting."
+"aww. You're my friend too"
 
 $SandyIsNotFriend
 !Sandy
 "Daww... why not?"
-"Alright, I'd say you're worthy... but you're mean."
+"It's alright, I'll win you over eventually."
 ;
 
 $SandyDontHaveOpener
@@ -92,24 +93,30 @@ $SandyDontHaveOpener
 "The bottle opener should be in the storage cupboard just outside this room."
 ;
 
+//BUTTON
+
 $ButtonFirstMeet
 !Button
 "O-oh boy, oh boy... Wh-what am I g-going to do?! Its all o-over! M-my life, my friendships, the world probably. I'm the worst... :<"
-"W-WAGHH! How l-long have you been standing there not saying anything?! Sorry... I-I shouldn't blame you, if you ch-choose to have a public freak out people are BOUND to stare at you"
-"I finally picked up the c-confidence to join the exclusive juice tasting club. but on my first day, I FORGOT MY JUICE AT HOME!!!"
-"I can't g-g-go to the club like this!"
-%AddToInventory,met button
-%checkprogress,cactus juice,buttonihavejuice,ButtonNoJuiceFreakOut
+"W-WAGHH! How l-long have you been standing there not saying anything?! Sorry... I-I shouldn't blame you, if you ch-choose to have a public freak out people are BOUND to stare at you..."
+"I finally picked up the c-confidence to join the exclusive juice tasting club. but o-on my first day..."
+"I FORGOT MY JUICE AT HOME!!!"
+"I can't g-g-go to the club like this! I-if you happen to come across some... please consider my p-plight..." 
+%AddToInventory,metbutton
+%checkprogress,Cactus Juice,ButtonIHaveJuice,ButtonNoJuiceFreakOut
+;
 
 $ButtonIHaveJuice
 !Button
-"I-is... is that cactus juice!? Is i-it for me?!"
+"I-is... is that Cactus Juice(tm)!? Is i-it for me?!"
 ?ButtonGiveJuice,ButtonNoJuiceFreakOut
 
 $ButtonNoJuiceFreakOut
 !Button
-"Okay... but without juice, I cant hang out with the juice tasting club. Ill probably never have any friends. im probably going to die alone. The juice i left at home is gonna get warm"
-"then that juice is going to attract sand bears, and they'll invade my home. and then they'll start getting more confident and invading other peoples homes. Then we'll have a bear revolution"
+"Okay... b-but without juice, I cant hang out with the juice tasting club. I'll probably never have any friends. I'm probably going to die alone. The juice I left at home is gonna get warm."
+"then that juice is going to attract sand bears, and they'll invade my home. and then they'll start getting more confident and invading other peoples homes. Then we'll have a bear revolution..."
+!Narrator
+"Maybe you should give them the cactus juice, this could go on awhile..."
 ;
 
 $ButtonAfterFirstMeetNoJuice
@@ -121,5 +128,208 @@ $ButtonAfterFirstMeetNoJuice
 
 $ButtonGiveJuice
 !Button
-"Oh thank you so much. You have no idea how much this means to me."
+"O-oh my goodness! Thank you so m-much. You h-have no idea how much this means to m-me!!!"
+"A-allow me to reward y-you! Here t-take this."
+%AddToInventory,Paper Bag,friendsbutton
+!Narrator
+"You have received a... Paper Bag?"
+!Button
+"I-it's all I have on me! What d-did you expect from someone who forgot their Cactus Juice(tm) on the first day of the juice tasting c-club...?"
+;
+
+//ELIO & STATUE
+
+$ElioFirstMeet
+!Elio
+"Hey, how you doin'? My name's Elio, didja need something?"
+%AddToInventory,metelio
+?ElioNeedSomething,ElioDontNeedSomething
+
+$ElioNeedSomething
+!Elio
+"This is the Cactus Juice Opener Storage Room (Trademark Pending)."
+"The only problem is, see that statue behind the pillar? He protects the Cactus Juice Openers(tm) and he is down in the dumps at the moment. His main issue is that he hasn't gotten direct sunlight and he's been trying to work on his tan."
+"Tell you what, I may just look like a lightbulb, but I can glow pretty bright if I put my mind to it, maybe use that mirror to try and aim my beam at him. Good luck!"
+%AddToInventory,metelio
+
+$ElioDontNeedSomething
+!Elio
+"The problem is, see that statue across the room? He protects the Cactus Juice Openers(tm) and he is down in the dumps at the moment. His main issue is that he hasn't gotten direct sunlight and he's been trying to work on his tan."
+"Tell you what, I may just look like a lightbulb, but I can glow pretty bright if I put my mind to it, maybe use that mirror to try and aim my beam at him. Who knows, he might reward you a Cactus Juice Opener(tm) for free. Good luck!"
+%AddToInventory,metelio
+
+$ElioAfterFirstMeetNotDone
+!Elio
+"You got this, buddy. Just shine my light on the statue behind the pillar so he can get a sweet tan, then talk to him so he can give you a Cactus Juice Opener(tm)."
+
+$ElioPuzzleComplete
+!Elio
+"Well done, bud! Enjoy that Cactus Juice Opener(tm), you've earned it!"
+;
+
+$ElioPromoted
+!Elio
+"Hey buddy! It's Elio from the Cactus Juice Opener Storage Room (Trademark Pending)."
+"Check me out... I got promoted to be the main mechanic of a puzzle room!"
+"The GATEKEEPER must've seen what we did and thought it was good enough to be it's own room!"
+"So now you need to do it again... but better and more complicated."
+"You have a headstart too, new adventurers won't have done this before this room."
+"Alright bud, I'm here if you need me."
+
+$ElioNotComplete
+!Elio
+"You need help, budster?"
+?ElioNeedHelp.ElioDontNeedHelp
+
+$ElioNeedHelp
+!Elio
+"Do you remember what we did in the Cactus Juice Opener Storage Room (Trademark Pending)?"
+"Use my light and the mirrors to hit the statue, he was promoted too..."
+"Still has to get his tan looking good, y'know how it is."
+"Good luck budderino!"
+
+$ElioDontNeedHelp
+"Ah ok, just checking on me are you?"
+"No need budler, I'm chilling with my other buddy statue."
+"Don't be afraid to ask for help!"
+
+$ElioFinishedPuzzle
+!Elio
+"Hey congrats on finishing this OFFICIAL puzzle! I'll put a good word in for you with the GATEKEEPER now that I can talk with him!"
+;
+
+//STATUE (2 IS CUT)
+
+$Statue1
+!Narrator
+"You hear the sound of a Cactus Juice Opener(tm) fall out of the statue."
+%AddToInventory,friendselio
+;
+
+$Statue2
+!Statue
+"Oh, it's you again! Thanks so much! Sorry for not talking before, I was sad about not being able to work on my tan."
+"But thanks to you AGAIN, I can keep it up and have it ready for the heat death of the universe in a couple of millenium.
+"Bad timing though..."
+"I was about to eat my chocolate bar... but now it's all melted."
+"Here, you can have it. maybe you could find a fridge or something in here Plus, you did help me keep up the tan so I gotta reward you somehow"
+%AddToInventory,Chocolater,friendselio2
+;
+
+
+
+//NAOMI
+
+$FirstMeetNaomi
+!Naomi
+"GAH! Don't look at me, I'm hideous! The artists of this game ran out of budget and I was the last sprite to be done!"
+%AddToInventory,metnaomi
+
+$NaomiPlayerHasBag
+"That paper bag is big enough to cover me up!"
+"If you let me have it, I have connections and can speak directly to the GATEKEEPER."
+"I mean... if you dont I can make sure the GATEKEEPER knows about how mean you are too."
+"Not helping a damsel in distress is for sure going to look super bad when you reach the end"
+"So what do you say, will you hand over the bag or not?"
+?NaomiGiveBag,NaomiDontGiveBag
+
+$NaomiGiveBag
+!Naomi
+"Good, You're smart, that'll get you far here..."
+"And so will my words to the GATEKEEPER, I'll be singing your praises to him soon."
+%AddToInventory,friendsnaomi
+
+$NaomiDontGiveBag
+!Naomi
+"C'mon, you know you're not gonna get far without my help."
+"Please?"
+?NaomiGiveBag,NaomiDontGiveBag
+
+$NaomiAfterBag
+!Naomi
+"Don't you worry, I'll give you a good word to the GATEKEEPER"
+;
+
+
+//PIERRE & MIDD (CUT)
+
+$PierreMiddFirstMeet
+!Pierre
+"Greetings stranger, I'm Pierre... the blue one and this i-"
+!Midd
+"HIII! I'm Midd, the pink one~!"
+!Pierre
+"Yeah..."
+"Anyway, We're here to help you cross this next puzzle... so yay..."
+!Midd
+"Oh shush, you party pooper! We have to help this person get through the next area so they can meet with the GATEKEEPER and have a chance to get outta here!"
+!Pierre
+"Oh yeah... *sigh* Ahem, In order to pass this trial laid out before you, you mus-"
+!Midd
+"You must take this lantern, teehee!"
+!Pierre
+"Midd, we've been through this, stick to the script..."
+!Midd
+"Sorry, I just get excited when a new contender shows up~"
+!Pierre
+"As I was saying... you must use the lantern I hold within my hands"
+!Midd
+"Yay, my turn! The lanterns light has the ability to make ethereal platforms, from our plane of existence, physical and visual in YOUR plane of existence!"
+"Some platforms will aid you across the room~"
+!Pierre
+"Whilst others will try to hinder your progress and make you plumet"
+"We've read the stupid script, now we can just give the solution. In lamens terms... use the light in order t-"
+!Midd
+"SHHHH!!! Let them try first and if they need help, they can come back to us FOR HINTS!!! Not solutions... Have fun, stranger~!"
+!Pierre
+"Good luck, here's the lamp that will allow you to cross..."
+%AddToInventory,metpierremidd,Lantern
+
+$PierreMiddHint //Puzzle not completed
+!Pierre
+"Stuck are you?"
+!Midd
+"Or did you miss us?! Teehee~."
+!Pierre
+"Silence Midd... Would you like me to give you a hint on how to advance?"
+?WantHint,DontWantHint
+
+$WantHint
+!Midd
+"Let me tell them!"
+!Pierre
+"Alright then, go ahead..."
+!Midd
+"Heheh~. So all you gotta do is time when you put out and reignite the lantern! The jumps also require some timing."
+"Hope you didn't skip leg day!"
+!Pierre
+"Alright, get to it stranger..."
+
+$DontWantHint
+!Pierre
+"Okay then... get back to it..."
+!Midd
+"Don't be a stranger, stranger!"
+;
+
+//PIERRE & MIDD AFTER PUZZLE!!! (CUT)
+
+//GATEKEEPER
+
+$GatekeeperWorthy
+!GATEKEEPER
+"Hello there, young one... I've heard plenty of things about you..."
+"You have come far and from what I've heard, you have done many a good thing to the people within this tomb"
+"I have deemed you worthy with progressing beyond this point..."
+"And escape this tomb..."
+"So long traveler, and well done."
+%GatekeeperGameComplete
+;
+
+$GatekeeperNotWorthy
+!GATEKEEPER
+"Hello there, young one... I've heard plenty of things about you..."
+"You have come far and from what I've heard, you have done many a good thing to the people within this tomb"
+"However, it seems you have not seen everything there is to see."
+"You may have missed someone in a room somewhere, come back to me when they are happy with you and I may deem you worthy of advancing past this point."
 ;
