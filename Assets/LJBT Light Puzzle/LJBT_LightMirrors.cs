@@ -79,11 +79,11 @@ public class LJBT_LightMirrors : MonoBehaviour, IInteractables
     {
         //this can cause an overflow problem if a mirror shoots light at another mirror that shoots light at it...
         //i dont have the time to fix this.  im just scrapping the 2nd puzzle room where this is likely to happen. technically its possible in the first room, but probably wont happen. 
-        /*if (HaveIAlreadyFiredThisFrame)
+        if (HaveIAlreadyFiredThisFrame)
             return;
         
         HaveIAlreadyFiredThisFrame = true;
-        FrameEndReset();*///This solution didnt work. the wait for end of frame coroutine doesnt do what i want it to do. 
+        StartCoroutine(FrameEndReset());//This solution didnt work. the wait for end of frame coroutine doesnt do what i want it to do. 
 
         //this should happen once every frame, its called ffrom the update loop of LJBT light puzzle (or from other instances of this script)
         //each frame that light is being shot at this, shoot light forward
@@ -113,11 +113,11 @@ public class LJBT_LightMirrors : MonoBehaviour, IInteractables
         lastCoroutine = StartCoroutine(DeleteBeam());
     }
 
-    /*IEnumerator FrameEndReset()
+    IEnumerator FrameEndReset()
     {
         yield return new WaitForEndOfFrame();
         HaveIAlreadyFiredThisFrame = false;
-    }*/
+    }
     IEnumerator DeleteBeam()
     {
         //if the light isnt reflecting from this mirror, delete the beam. To do this, im gonna have this coroutine stopped and then called every frame that the mirror is shooting light. if its not stopped for two frames, delete it

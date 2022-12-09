@@ -53,6 +53,7 @@ $SandyNice
 "Ah! that's good, nice to hear."
 "Question two!"
 "Do you like animals?"
+?SandyLikeAnimals,SandyDontLikeAnimals
 
 $SandyNotNice
 !Sandy
